@@ -16,7 +16,6 @@ else()
 endif()
 
 find_package( OpenCV REQUIRED )
-find_package( OpenGL REQUIRED )
 
 add_executable(${PROJECT_NAME} ${SRC_LIST})
-target_link_libraries( ${PROJECT_NAME} ${OPENGL_LIBRARIES} ${OpenCV_LIBS})
+target_link_libraries( ${PROJECT_NAME} ${OpenCV_LIBS})
