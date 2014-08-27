@@ -10,7 +10,7 @@ int main(int argc, char * argv[] )
     cv::Mat myInverseCovariance;
     cv::Mat myMean = (cv::Mat_<float>(2,1) << 0.4404, 0.3111);
     cv::invert(myCovariance, myInverseCovariance);
-    float th = 0.33;
+    float th = 0.33f;
 
     // Create an instance of the skin detector, display its values
     SkinDetector LO(myCovariance, myInverseCovariance, myMean, th);
