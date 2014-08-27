@@ -3,7 +3,6 @@
 //Constructurs
 SkinDetector::SkinDetector()
 {
-    std::cout << "Please set the mean, covariance matrix and the threshold." << std::endl;
     this->covariance = (cv::Mat_<float>(2,2) << 0.0038,-0.0009,-0.0009, 0.0009 );
     this->mean = (cv::Mat_<float>(2,1) << 0.4404, 0.3111);
     cv::invert(covariance, inverse_covariance);
