@@ -3,6 +3,19 @@
 
 using namespace std;
 
+/******************************************************************************/
+// setup the cameras properly based on OS platform
+
+// 0 in linux gives first camera for v4l
+//-1 in windows gives first device or user dialog selection
+
+#ifdef linux
+	#define CAMERA_INDEX 0
+#else
+	#define CAMERA_INDEX -1
+#endif
+/******************************************************************************/
+
 int main(int argc, char * argv[] )
 {
     // Set classification parameters
@@ -23,8 +36,9 @@ int main(int argc, char * argv[] )
     cv::Mat bgr_image;
 
     // initilialise camera feed, loop until user enter a command.
-    cv::VideoCapture capture(0);
-    auto loop = true;
+    cv::VideoCapture capture;
+    capture.open(CAMERA_INDEX);
+    bool loop = true;
     while (loop)
     {
         capture >> bgr_image;

@@ -28,7 +28,7 @@ SkinDetector::~SkinDetector()
     mean.release();
     bgr_img.release();
     skin_map.release();
-    for (auto ii=0; ii<layers.size(); ii++)
+    for (unsigned int ii=0; ii<layers.size(); ii++)
         layers[ii].release();
     layers.clear();
 }
