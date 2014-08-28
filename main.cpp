@@ -31,9 +31,11 @@ int main(int argc, char * argv[] )
         cv::flip(bgr_image, bgr_image, 1 );
         LO.set_bgr_image(bgr_image);
         cv::Mat skin_map = LO.get_skin_map();
-        if (!bgr_image.empty())
+        cv::Mat masked_img;
+        bgr_image.copyTo(masked_img, skin_map);
+        if (!masked_img.empty())
         {
-            cv::imshow("camera", skin_map);
+            cv::imshow("camera", masked_img);
             int keyCode = cv::waitKey(30);
             switch (keyCode){
             case 27:
