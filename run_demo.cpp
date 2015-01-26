@@ -1,6 +1,6 @@
 /**
  * @file run_demo.cpp
- * @brief Main file for running the Generic Computer Vision application
+ * @brief Main file for running a demo of the Skin Detector application
  * @date Jan 23rd, 2015
  * @author Luis Tobias
  */
